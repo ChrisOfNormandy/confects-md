@@ -30,6 +30,7 @@
         "@chrisofnormandy/confects-editors": "0.0.0",
         "@chrisofnormandy/confetti": "^0.0.1",
         "react-markdown": "^10.0.0",
+        "remark-gfm": "^4.0.1",
         "sass": "^1.87.0",
         "uuid": "^11.1.0"
     },

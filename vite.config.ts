@@ -17,10 +17,7 @@ export default ({ mode }: UserConfig) => {
             copyPublicDir: false,
             emptyOutDir: false,
             lib: {
-                entry: [
-                    'markdown',
-                    'router'
-                ].map((exp) => resolve(`./lib/${exp}.ts`)),
+                entry: ['markdown', 'router'].map((exp) => resolve(`./lib/${exp}.ts`)),
                 formats: ['es'],
                 name: 'confects'
             },

@@ -18,8 +18,8 @@
             "require": null
         },
         "./routers": {
-            "types": "./dist/lib/routers.d.ts",
-            "import": "./dist/routers.js",
+            "types": "./dist/lib/router.d.ts",
+            "import": "./dist/router.js",
             "require": null
         }
     },

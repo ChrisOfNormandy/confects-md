@@ -278,36 +278,31 @@ __metadata:
     "@chrisofnormandy/confects": "npm:0.0.1"
     "@chrisofnormandy/confects-editors": "npm:0.0.0"
     "@chrisofnormandy/confetti": "npm:^0.0.1"
-    "@eslint/js": "npm:^9.25.1"
     "@types/node": "npm:^22.15.2"
     "@types/react": "npm:^19.1.2"
     "@types/react-dom": "npm:^19.1.2"
     "@types/uuid": "npm:^10.0.0"
     "@vitejs/plugin-react": "npm:^4.4.1"
     eslint: "npm:^9.25.1"
-    eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-refresh: "npm:^0.4.20"
-    globals: "npm:^16.0.0"
     knip: "npm:^5.50.5"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
     react-markdown: "npm:^10.0.0"
-    react-router: "npm:^7.5.2"
     react-router-dom: "npm:^7.5.2"
     remark-gfm: "npm:^4.0.1"
     sass: "npm:^1.87.0"
     tsc-alias: "npm:^1.8.15"
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:^5.8.3"
-    typescript-eslint: "npm:^8.31.0"
     uuid: "npm:^11.1.0"
     vite: "npm:^6.3.3"
     vite-tsconfig-paths: "npm:^5.1.4"
   peerDependencies:
     react: ">=19"
     react-dom: ">=19"
-    react-router: ">=7"
+    react-router-dom: ">=7"
   languageName: unknown
   linkType: soft
 
@@ -4756,7 +4751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router@npm:7.5.2, react-router@npm:^7.5.2":
+"react-router@npm:7.5.2":
   version: 7.5.2
   resolution: "react-router@npm:7.5.2"
   dependencies:

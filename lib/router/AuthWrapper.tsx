@@ -1,28 +1,24 @@
-import { Auth0Provider, Auth0ProviderOptions } from '@auth0/auth0-react';
+import { Auth0Provider, Auth0ProviderOptions, AuthorizationParams } from '@auth0/auth0-react';
 import * as ReactRouterDOM from 'react-router-dom';
 
 const SCOPES = 'openid profile email';
 
 export type AuthWrapperProps = {
-    scope?: string
-    audience?: string
-    redirectUri?: string
+    auth?: AuthorizationParams
 } & Auth0ProviderOptions;
 
 export function AuthWrapper(
     {
         children,
-        scope = SCOPES,
         domain,
         clientId,
-        audience,
-        redirectUri,
+        auth,
         ...props
     }: AuthWrapperProps
 ) {
     const navigate = ReactRouterDOM.useNavigate();
 
-    if (!(domain && clientId && audience)) {
+    if (!(domain && clientId)) {
         return <div>
             MISSING AUTH SETTINGS
         </div>;
@@ -33,9 +29,9 @@ export function AuthWrapper(
             onRedirectCallback={(appState) => navigate(appState?.returnTo || window.location.pathname)}
             authorizationParams={
                 {
-                    redirect_uri: redirectUri || window.location.origin,
-                    audience,
-                    scope
+                    redirect_uri: window.location.origin,
+                    scope: SCOPES,
+                    ...auth
                 }
             }
             domain={domain}

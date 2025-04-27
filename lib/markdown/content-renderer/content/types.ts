@@ -47,8 +47,10 @@ interface ContentTileGroupSchema {
     }
 }
 
+export type BlockContentType = ContentSchema | ContentListSchema | ContentGroupSchema | ContentTileGroupSchema | null
+
 interface ContentBlockSchema {
-    content: (ContentSchema | ContentListSchema | ContentGroupSchema | ContentTileGroupSchema | null)[]
+    content: BlockContentType[]
 }
 
 export interface ContentLayoutSchema {

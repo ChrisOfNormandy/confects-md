@@ -70,7 +70,7 @@ export function ContentRenderer(
                     printWindow.document.close();
 
                     // Wait for the content to load and then trigger the print dialog
-                    printWindow.onload = function () {
+                    printWindow.onload = () => {
                         printWindow.print();
                         // PrintWindow.close();
                     };

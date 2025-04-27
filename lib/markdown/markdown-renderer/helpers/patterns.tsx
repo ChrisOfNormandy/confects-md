@@ -13,10 +13,10 @@ interface Processor {
  *Subscript:      ~text^
  */
 
-const HIGHLIGHT_SYNTAX = /\|\|(.*)\|\|/;
-const SUPERSCRIPT_SYNTAX = /[^^]\^([^^]*)\^/;
-const SUBSCRIPT_SYNTAX = /~([^^]*)\^/;
-const STYLE_SYNTAX = /%\((.+)\)(.*)%/;
+const HIGHLIGHT_SYNTAX = /\|\|(?<content>.*)\|\|/;
+const SUPERSCRIPT_SYNTAX = /[^^]\^(?<content>[^^]*)\^/;
+const SUBSCRIPT_SYNTAX = /~(?<content>[^^]*)\^/;
+const STYLE_SYNTAX = /%\((?<style>.+)\)(?<content>.*)%/;
 const TOC_SYNTAX = /\[TOC\]/;
 
 const HIGHLIGHT_PROCESS: Processor = {
@@ -52,21 +52,21 @@ function getAppliedStyles(tag: string, value: ReactNode) {
     const tagArr = tag.split(/;/g);
     const tags: HTMLElementProps = {};
 
-    tagArr.forEach((tag) => {
-        const [key, value] = tag.split('=');
-        if (key === undefined || value === undefined)
+    tagArr.forEach((tagItem) => {
+        const [tagKey, tagValue] = tagItem.split('=');
+        if (tagKey === undefined || tagValue === undefined)
             return;
 
-        switch (key) {
+        switch (tagKey) {
             case 'class': {
-                tags.className = value;
+                tags.className = tagValue;
                 break;
             }
             case 'style': {
-                tags.style = JSON.parse(value);
+                tags.style = JSON.parse(tagValue);
                 break;
             }
-            default: throw new Error('Unsupported key: ' + key);
+            default: throw new Error('Unsupported key: ' + tagKey);
         }
     });
 

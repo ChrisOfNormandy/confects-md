@@ -23,6 +23,7 @@ interface IRouter {
 export class CRouter {
     readonly default?: string;
 
+    // eslint-disable-next-line no-use-before-define
     readonly parent?: CRouter;
 
     readonly path: string;

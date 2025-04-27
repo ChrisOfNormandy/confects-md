@@ -1,7 +1,7 @@
 import { ClassAttributes, HTMLAttributes, JSX, ReactNode } from 'react';
 import { CodeEditor, CodeEditorProps } from '@chrisofnormandy/confects-editors';
 import { Components, ExtraProps } from 'react-markdown';
-import { getClassName } from '@chrisofnormandy/confects/helpers';
+import { getClassName, uniqueId } from '@chrisofnormandy/confects/helpers';
 import { HTML_CodeProps, isInterfaceTypeIterable } from '@chrisofnormandy/confects/types';
 import { processingOrder } from './patterns';
 import { v4 } from 'uuid';
@@ -54,15 +54,20 @@ function application<T extends HTMLElement>({ children, node }: ElementProps<T>)
 
         const val = process([temp]);
 
-        const repl = val.map((v) => {
+        const pRepl = val.map((v) => {
             if (
                 !v ||
                 typeof v === 'number' ||
                 typeof v === 'boolean' ||
                 typeof v === 'object' &&
                 isInterfaceTypeIterable(v)
-            )
-                return <p>{v}</p>;
+            ) {
+                return <p
+                    key={uniqueId()}
+                >
+                    {v}
+                </p>;
+            }
 
 
             if (typeof v === 'string') {
@@ -109,7 +114,7 @@ function application<T extends HTMLElement>({ children, node }: ElementProps<T>)
             return v;
         });
 
-        return <p>{repl}</p>;
+        return <p>{pRepl}</p>;
     }
 
     if (typeof children !== 'string') {
@@ -138,19 +143,20 @@ function application<T extends HTMLElement>({ children, node }: ElementProps<T>)
 }
 
 export const renderers: Components = {
-    p: (props) => application<HTMLParagraphElement>(props),
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    blockquote: ({ children, node, ...props }) => <blockquote className='f-body' {...props}>{children}</blockquote>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     code: ({ children, node, className, ...props }: HTML_CodeProps & { node?: unknown }) => {
         const spl = children?.toString().split(/\n/g);
         if (!spl)
             return <code className={getClassName('f-body', className)} />;
 
-        const m = spl[0]?.match(/^\/\/ md-flags: (.+)/);
+        const m = spl[0]?.match(/^\/\/ md-flags: (?<flags>.+)/);
         if (m) {
             const content = spl.slice(1).join('\n')
                 .trim();
 
-            const flags = m[1]?.split(/;/g).map((s) => s.trim());
+            const flags = m.groups?.flags?.split(/;/g).map((s) => s.trim());
             if (!flags)
                 return null;
 
@@ -181,8 +187,6 @@ export const renderers: Components = {
         return <code className={getClassName('f-body', className)} {...props}>{children}</code>;
     },
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    blockquote: ({ children, node, ...props }) => <blockquote className='f-body' {...props}>{children}</blockquote>,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     h1: ({ children, node, ...props }) => <h1 {...props} id={(children || '').toString().toLowerCase()
         .replace(/\s/g, '-')} className='heading'>{children}</h1>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -199,5 +203,6 @@ export const renderers: Components = {
         .replace(/\s/g, '-')} className='heading'>{children}</h5>,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     h6: ({ children, node, ...props }) => <h6 {...props} id={(children || '').toString().toLowerCase()
-        .replace(/\s/g, '-')} className='heading'>{children}</h6>
+        .replace(/\s/g, '-')} className='heading'>{children}</h6>,
+    p: (props) => application<HTMLParagraphElement>(props)
 };

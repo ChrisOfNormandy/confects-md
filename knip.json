@@ -1,30 +1,14 @@
 {
     "$schema": "https://unpkg.com/knip@5/schema.json",
     "entry": [
-        "lib/buttons.ts",
-        "lib/containers.ts",
-        "lib/decorations.ts",
-        "lib/dialogs.ts",
-        "lib/helpers.ts",
-        "lib/inputs.ts",
-        "lib/managed.ts",
         "lib/markdown.ts",
-        "lib/menu.ts",
-        "lib/overlay.ts",
         "lib/router.ts",
-        "lib/selectors.ts",
-        "lib/tables.ts",
-        "lib/types.ts",
         "src/main.tsx"
     ],
     "ignore": [
         "dist/**/*"
     ],
-    "ignoreBinaries": [
-        "go"
-    ],
     "ignoreDependencies": [
-        "bootstrap-icons",
         "eslint-plugin-react-hooks",
         "eslint-plugin-react-refresh",
         "tsconfig-paths"

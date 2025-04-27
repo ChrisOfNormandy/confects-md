@@ -1,6 +1,7 @@
-import { Button, Glyph } from '@chrisofnormandy/confects/buttons';
+import { Button } from '@chrisofnormandy/confects/buttons';
 import { Dispatch } from 'react';
-import { downloadContent, openInNewTab, getClassName } from '@chrisofnormandy/confects/helpers';
+import { FileControls } from './header/FileControls';
+import { getClassName } from '@chrisofnormandy/confects/helpers';
 import { HTML_DivProps } from '@chrisofnormandy/confects/types';
 
 export interface MarkdownFeatureFlags {
@@ -68,36 +69,9 @@ export function MarkdownHeader(
             </div>
         }
 
-        {
-            (
-                features.print ||
-                features.download
-            ) &&
-            <div
-                className='file-controls'
-            >
-                {
-                    content &&
-                    features.print &&
-                    <Glyph
-                        className='f-trinary'
-                        icon='printer'
-                        onClick={() => openInNewTab(content)}
-                        title='Open in new tab'
-                    />
-                }
-
-                {
-                    content &&
-                    features.download &&
-                    <Glyph
-                        className='f-trinary'
-                        icon='download'
-                        onClick={() => downloadContent(content)}
-                        title='Download as text file'
-                    />
-                }
-            </div>
-        }
+        <FileControls
+            content={content}
+            features={features}
+        />
     </div>;
 }

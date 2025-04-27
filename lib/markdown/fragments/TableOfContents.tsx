@@ -5,16 +5,13 @@ import { useEffect, useRef, useState } from 'react';
 
 const MAX_CLIMB_ATTEMPTS = 20;
 
-const HEADING_MAP = new Map<string, number>(
-    [
-        ['H1', 1],
-        ['H2', 2],
-        ['H3', 3],
-        ['H4', 4],
-        ['H5', 5],
-        ['H6', 6]
-    ]
-);
+function getHeadingLevel(tag: string) {
+    const nChar = tag.charCodeAt(1);
+    const n = Number(nChar);
+    if (isNaN(n))
+        return 1;
+    return n;
+}
 
 export function TableOfContents() {
 
@@ -44,7 +41,7 @@ export function TableOfContents() {
         let pointer: HeadingNode;
         all.forEach((element) => {
             if (element instanceof HTMLHeadingElement) {
-                const tier = HEADING_MAP.get(element.tagName);
+                const tier = getHeadingLevel(element.tagName);
                 if (!tier)
                     return;
 
@@ -57,12 +54,12 @@ export function TableOfContents() {
                     return;
                 }
 
-                if (tier === pointer.tier) 
+                if (tier === pointer.tier)
                     pointer = pointer.parent().addNext(heading);
-                
-                else if (tier > pointer.tier) 
+
+                else if (tier > pointer.tier)
                     pointer = pointer.addNext(heading);
-                
+
                 else {
                     let parent = pointer.parent();
 

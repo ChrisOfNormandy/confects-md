@@ -1,0 +1,113 @@
+@use '~styling' as styling;
+@use '~layout' as layout;
+
+.markdown-renderer {
+    @include layout.flex(false, true);
+    @include styling.rounded;
+    @include layout.fullsize;
+
+    overflow: hidden;
+
+    .md-header {
+        @include styling.rounded(10px, top);
+        @include layout.flex-between(true);
+
+        padding: 5px;
+
+        .render-controls {
+            @include layout.flex(true);
+
+            .show-pretty {
+                @include styling.rounded(0);
+                @include styling.rounded(10px, left)
+            }
+
+            .show-raw {
+                @include styling.rounded(0);
+                @include styling.rounded(10px, right)
+            }
+        }
+
+        .file-controls {
+            @include layout.flex(true);
+
+            .glyph {
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .md-body {
+        @include layout.flex(false, true);
+        @include layout.fullsize(40px);
+
+        padding: 10px 20px;
+        overflow: hidden;
+
+        .md-content {
+            @include layout.flex(false, true);
+            @include layout.fullsize(20px);
+            @include styling.rounded;
+
+            padding: 10px;
+            overflow: auto;
+
+            &:not(.raw) {
+                .heading {
+                    margin: 10px 0;
+                }
+
+                ul {
+                    list-style-type: disc;
+                }
+
+                ul,
+                ol {
+                    padding-left: 10px;
+
+                    ul,
+                    ol {
+                        margin-left: 20px;
+                    }
+                }
+
+                .thumbnail {
+                    img {
+                        max-width: 300px;
+                    }
+                }
+
+                img {
+                    width: fit-content;
+                }
+
+                blockquote {
+                    margin: 10px 0 10px 20px;
+                    padding: 10px 20px;
+                    border-left: 3px solid;
+
+                    blockquote {
+                        filter: brightness(0.95);
+                    }
+                }
+
+                pre {
+                    code {
+                        @include layout.wide;
+                    }
+                }
+            }
+        }
+    }
+
+    .md-footer {
+        @include styling.rounded(10px, bottom);
+        @include layout.flex(true);
+
+        padding: 5px;
+    }
+
+    @include layout.flex(false, true);
+}

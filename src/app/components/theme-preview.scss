@@ -1,0 +1,20 @@
+@use '~layout' as layout;
+
+.theme-preview {
+    .theme-preview-block {
+        @include layout.flex(false, true);
+        @include layout.wide;
+
+        .block-row {
+            @include layout.flex-even;
+            @include layout.wide;
+
+            .block {
+                @include layout.flex-center(true, true);
+                @include layout.wide;
+
+                padding: 8px;
+            }
+        }
+    }
+}

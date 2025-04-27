@@ -1,0 +1,129 @@
+{
+    "title": "Content",
+    "layout": [
+        {
+            "content": [
+                {
+                    "content": {
+                        "href": "/pages/content/block_1.md"
+                    }
+                },
+                {
+                    "content": {
+                        "image": {
+                            "src": "https://picsum.photos/200/300"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "list": [
+                        {
+                            "content": [
+                                {
+                                    "content": {
+                                        "href": "/pages/content/block_2.md"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "content": [
+                                {
+                                    "content": {
+                                        "text": "This is a piece of text content."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "content": [
+                                {
+                                    "content": {
+                                        "image": {
+                                            "src": "https://picsum.photos/200/300"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "content": [
+                null
+            ]
+        },
+        {
+            "content": [
+                {
+                    "group": [
+                        {
+                            "content": {
+                                "href": "/pages/content/block_2.md"
+                            }
+                        },
+                        {
+                            "content": {
+                                "text": "This is a piece of text content."
+                            }
+                        },
+                        {
+                            "content": {
+                                "image": {
+                                    "src": "https://picsum.photos/200/300"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "tiles": {
+                        "options": {
+                            "perRow": 3
+                        },
+                        "content": [
+                            {
+                                "figure": {
+                                    "image": "https://picsum.photos/200/300",
+                                    "caption": "Example A"
+                                }
+                            },
+                            {
+                                "figure": {
+                                    "image": "https://picsum.photos/200/300",
+                                    "caption": "Example B"
+                                }
+                            },
+                            {
+                                "figure": {
+                                    "image": "https://picsum.photos/200/300",
+                                    "caption": "Example C"
+                                }
+                            },
+                            {
+                                "figure": {
+                                    "image": "https://picsum.photos/200/300"
+                                }
+                            },
+                            {
+                                "figure": {
+                                    "image": "https://picsum.photos/200/300"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

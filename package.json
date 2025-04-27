@@ -1,0 +1,78 @@
+{
+    "author": "chrisofnormandy",
+    "description": "A collection of React / JSX components.",
+    "keywords": [],
+    "license": "MIT",
+    "name": "@chrisofnormandy/confects-md",
+    "packageManager": "yarn@4.9.1",
+    "type": "module",
+    "version": "0.0.0",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        "./style.css": "./dist/confects-md.css",
+        "./markdown": {
+            "types": "./dist/lib/markdown.d.ts",
+            "import": "./dist/markdown.js",
+            "require": null
+        },
+        "./routers": {
+            "types": "./dist/lib/routers.d.ts",
+            "import": "./dist/routers.js",
+            "require": null
+        }
+    },
+    "dependencies": {
+        "@auth0/auth0-react": "^2.3.0",
+        "@chrisofnormandy/concauses": "0.0.0-2",
+        "@chrisofnormandy/confects": "0.0.1",
+        "@chrisofnormandy/confects-editors": "0.0.0",
+        "@chrisofnormandy/confetti": "^0.0.1",
+        "react-markdown": "^10.0.0",
+        "sass": "^1.87.0",
+        "uuid": "^11.1.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.25.1",
+        "@types/node": "^22.15.2",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.2",
+        "@types/uuid": "^10.0.0",
+        "@vitejs/plugin-react": "^4.4.1",
+        "eslint": "^9.25.1",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-react-refresh": "^0.4.20",
+        "globals": "^16.0.0",
+        "knip": "^5.50.5",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-router": "^7.5.2",
+        "react-router-dom": "^7.5.2",
+        "tsc-alias": "^1.8.15",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.31.0",
+        "vite": "^6.3.3",
+        "vite-tsconfig-paths": "^5.1.4"
+    },
+    "peerDependencies": {
+        "react": ">=19",
+        "react-dom": ">=19",
+        "react-router": ">=7"
+    },
+    "scripts": {
+        "build": "yarn clean; tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json && vite build",
+        "bump:pre": "npm version --commit-hooks false --git-tag-version false prerelease",
+        "bump": "npm version --commit-hooks false --git-tag-version false patch",
+        "clean": "rm -r ./dist",
+        "dev": "DEV=1 vite",
+        "docs": "cd ./docs && go run .",
+        "lint": "eslint --fix",
+        "prerelease": "yarn lint && yarn knip && yarn build && yarn bump:pre && git add --a",
+        "release": "yarn lint && yarn knip && yarn build && yarn bump && git add --a",
+        "sanity": "yarn typecheck && yarn lint && yarn knip",
+        "typecheck": "tsc -p tsconfig.json --noEmit"
+    }
+}

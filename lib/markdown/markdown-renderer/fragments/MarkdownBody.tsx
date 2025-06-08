@@ -1,5 +1,5 @@
-import { getClassName } from '@chrisofnormandy/confects/helpers';
-import { HTML_DivProps } from '@chrisofnormandy/confects/types';
+import { getClassName } from '@syren-dev-tech/confects/helpers';
+import { HTML_DivProps } from '@syren-dev-tech/confects/types';
 import { renderers } from '../helpers/renderers';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';

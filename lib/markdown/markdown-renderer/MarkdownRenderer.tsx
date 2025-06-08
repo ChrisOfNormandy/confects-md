@@ -1,7 +1,7 @@
 import './styles/markdown-renderer.scss';
-import { getClassName } from '@chrisofnormandy/confects/helpers';
-import { HTML_DivProps } from '@chrisofnormandy/confects/types';
-import { Loading } from '@chrisofnormandy/confects/decorations';
+import { getClassName } from '@syren-dev-tech/confects/helpers';
+import { HTML_DivProps } from '@syren-dev-tech/confects/types';
+import { Loading } from '@syren-dev-tech/confects/decorations';
 import { MarkdownBody } from './fragments/MarkdownBody';
 import { MarkdownFeatureFlags, MarkdownHeader } from './fragments/MarkdownHeader';
 import { MarkdownFooter } from './fragments/MarkdownFooter';

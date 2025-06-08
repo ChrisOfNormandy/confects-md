@@ -1,6 +1,6 @@
-import { downloadContent, openInNewTab } from '@chrisofnormandy/confects/helpers';
-import { Glyph } from '@chrisofnormandy/confects/buttons';
-import { HTML_DivProps } from '@chrisofnormandy/confects/types';
+import { downloadContent, openInNewTab } from '@syren-dev-tech/confects/helpers';
+import { Glyph } from '@syren-dev-tech/confects/buttons';
+import { HTML_DivProps } from '@syren-dev-tech/confects/types';
 import { MarkdownFeatureFlags } from '../MarkdownHeader';
 
 type FileControlsProps = {

@@ -1,4 +1,4 @@
-import { HTML_DivProps } from '@chrisofnormandy/confects/types';
+import { HTML_DivProps } from '@syren-dev-tech/confects/types';
 import { MarkdownFeatureFlags } from 'lib/markdown';
 
 export type MarkdownFooterProps = {

@@ -1,6 +1,6 @@
-import { ContentDivider, ContentGroup, ContentList, ContentListItem, ContentTileGroup, ContentTileGroupProps, ContentTileProps } from '@chrisofnormandy/confects/containers';
+import { ContentDivider, ContentGroup, ContentList, ContentListItem, ContentTileGroup, ContentTileGroupProps, ContentTileProps } from '@syren-dev-tech/confects/containers';
 import { BlockContentType, isContentGroupSchema, isContentListSchema, isContentTileGroupSchema } from '../content/types';
-import { uniqueId } from '@chrisofnormandy/confects/helpers';
+import { uniqueId } from '@syren-dev-tech/confects/helpers';
 import { RenderContent } from './RenderContent';
 
 interface BlockContentProps {

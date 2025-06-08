@@ -1,4 +1,4 @@
-import { getClassName } from '@chrisofnormandy/confects/helpers';
+import { getClassName } from '@syren-dev-tech/confects/helpers';
 import { IRouteProps, Route } from './Route';
 
 export function RouteList(

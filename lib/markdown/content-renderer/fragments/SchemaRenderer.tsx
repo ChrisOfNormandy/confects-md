@@ -1,6 +1,6 @@
-import { ContentBlock } from '@chrisofnormandy/confects/containers';
+import { ContentBlock } from '@syren-dev-tech/confects/containers';
 import { ContentLayoutSchema } from '../content/types';
-import { uniqueId } from '@chrisofnormandy/confects/helpers';
+import { uniqueId } from '@syren-dev-tech/confects/helpers';
 import BlockContent from './BlockContent';
 
 export

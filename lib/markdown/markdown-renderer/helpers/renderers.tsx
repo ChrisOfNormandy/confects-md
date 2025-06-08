@@ -1,8 +1,8 @@
 import { ClassAttributes, HTMLAttributes, JSX, ReactNode } from 'react';
-import { CodeEditor, CodeEditorProps } from '@chrisofnormandy/confects-editors';
+import { CodeEditor, CodeEditorProps } from '@syren-dev-tech/confects-editors';
 import { Components, ExtraProps } from 'react-markdown';
-import { getClassName, uniqueId } from '@chrisofnormandy/confects/helpers';
-import { HTML_CodeProps, isInterfaceTypeIterable } from '@chrisofnormandy/confects/types';
+import { getClassName, uniqueId } from '@syren-dev-tech/confects/helpers';
+import { HTML_CodeProps, isInterfaceTypeIterable } from '@syren-dev-tech/confects/types';
 import { processingOrder } from './patterns';
 import { v4 } from 'uuid';
 

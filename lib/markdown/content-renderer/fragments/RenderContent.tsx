@@ -1,4 +1,4 @@
-import { Content } from '@chrisofnormandy/confects/containers';
+import { Content } from '@syren-dev-tech/confects/containers';
 import { ContentSchema, isContentImageSchema, isContentMarkdownSchema } from '../content/types';
 import { MarkdownRenderer } from 'lib/markdown';
 

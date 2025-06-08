@@ -1,12 +1,12 @@
 {
     "author": "chrisofnormandy",
-    "description": "A collection of React / JSX components.",
+    "description": "Markdown and React Router components for React",
     "keywords": [],
     "license": "MIT",
-    "name": "@chrisofnormandy/confects-md",
+    "name": "@syren-dev-tech/confects-md",
     "packageManager": "yarn@4.9.1",
     "type": "module",
-    "version": "0.0.0-1",
+    "version": "0.1.0",
     "files": [
         "dist"
     ],
@@ -25,10 +25,10 @@
     },
     "dependencies": {
         "@auth0/auth0-react": "^2.3.0",
-        "@chrisofnormandy/concauses": "0.0.0-2",
-        "@chrisofnormandy/confects": "0.0.1",
-        "@chrisofnormandy/confects-editors": "0.0.0",
-        "@chrisofnormandy/confetti": "^0.0.1",
+        "@syren-dev-tech/concauses": "0.1.0",
+        "@syren-dev-tech/confects": "0.1.0",
+        "@syren-dev-tech/confects-editors": "0.1.0",
+        "@syren-dev-tech/confetti": "^0.1.0",
         "react-markdown": "^10.0.0",
         "remark-gfm": "^4.0.1",
         "sass": "^1.87.0",

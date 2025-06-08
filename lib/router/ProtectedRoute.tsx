@@ -1,16 +1,15 @@
-import { Loading } from '@chrisofnormandy/confects/decorations';
+import { Loading } from '@syren-dev-tech/confects/decorations';
 import { withAuthenticationRequired } from '@auth0/auth0-react';
 
-export interface ProtectedRouteProps {
-    element: React.ComponentType<object>
+export interface ProtectedRouteProps<T> {
+    element: React.ComponentType<T>;
+    [key: string]: unknown;
 }
 
-export function ProtectedRoute({ element }: ProtectedRouteProps) {
+export function ProtectedRoute<T extends object>({ element, ...rest }: ProtectedRouteProps<T>) {
     const Element = withAuthenticationRequired(element, {
-        onRedirecting: () =>
-            <Loading />
-
+        onRedirecting: () => <Loading />
     });
 
-    return <Element />;
+    return <Element {...rest as T} />;
 }

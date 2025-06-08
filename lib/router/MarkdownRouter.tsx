@@ -1,5 +1,5 @@
 import { Navigate, Route, RouteProps } from 'react-router-dom';
-import { HTML_DivProps } from '@chrisofnormandy/confects/types';
+import { HTML_DivProps } from '@syren-dev-tech/confects/types';
 import { CRouterElement } from './CRouterElement';
 import { CRouter } from './CRouter';
 import React from 'react';

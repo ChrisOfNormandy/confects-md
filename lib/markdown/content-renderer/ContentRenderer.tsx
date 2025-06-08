@@ -1,7 +1,7 @@
-import { Button } from '@chrisofnormandy/confects/buttons';
+import { Button } from '@syren-dev-tech/confects/buttons';
 import { ContentLayoutSchema } from './content/types';
-import { getClassName } from '@chrisofnormandy/confects/helpers';
-import { HTML_DivProps } from '@chrisofnormandy/confects/types';
+import { getClassName } from '@syren-dev-tech/confects/helpers';
+import { HTML_DivProps } from '@syren-dev-tech/confects/types';
 import { SchemaRenderer } from './fragments/SchemaRenderer';
 import { useEffect, useRef, useState } from 'react';
 

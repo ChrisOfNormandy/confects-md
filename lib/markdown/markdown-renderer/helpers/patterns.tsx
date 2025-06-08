@@ -1,4 +1,4 @@
-import { HTMLElementProps } from '@chrisofnormandy/confects/types';
+import { HTMLElementProps } from '@syren-dev-tech/confects/types';
 import { TableOfContents } from 'lib/markdown';
 import { ReactNode } from 'react';
 
